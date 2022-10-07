@@ -225,6 +225,7 @@ function WorkList({
   const rollingPageNumber = (pageNumber - 1) % rollingPageNumberMod;
   const offset = resultsPerPage * rollingPageNumber;
   const offsetAndTake = offset + resultsPerPage;
+
   const tableDataSource = sortedStudies.map((study, key) => {
     const rowKey = key + 1;
     const isExpanded = expandedRows.some(k => k === rowKey);
@@ -313,6 +314,7 @@ function WorkList({
       // not clicked on.
       expandedContent: (
         <StudyListExpandedRow
+          studyInstanceUid={studyInstanceUid}
           seriesTableColumns={{
             description: 'Description',
             seriesNumber: 'Series',
