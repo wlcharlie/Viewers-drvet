@@ -15,12 +15,14 @@ const StudyListExpandedRow = ({
   children,
 }) => {
   const [open, setOpen] = React.useState(false);
+  const [rawUrl, setRawUrl] = React.useState(null);
   const [qrCode, setQRCode] = React.useState(null);
   const { t } = useTranslation('StudyList');
-  console.log(qrCode);
+
   React.useEffect(() => {
     const generateQR = async () => {
       try {
+        // const res = await fetch('http://192.168.1.177' + '/pacs/tools/find', {
         const res = await fetch(location.origin + '/pacs/tools/find', {
           method: 'POST',
           body: JSON.stringify({
@@ -36,11 +38,12 @@ const StudyListExpandedRow = ({
 
         const data = await res.json();
         const item = data[0];
-
-        const url = await QRCode.toDataURL(
-          location.origin + '/pacs/studies/' + item.ID + '/archive'
-        );
+        // const raw =
+        //   'http://192.168.1.177' + '/pacs/studies/' + item.ID + '/archive';
+        const raw = location.origin + '/pacs/studies/' + item.ID + '/archive';
+        const url = await QRCode.toDataURL(raw);
         setQRCode(url);
+        setRawUrl(raw);
       } catch (err) {
         console.error(err);
       }
@@ -53,14 +56,22 @@ const StudyListExpandedRow = ({
 
   return (
     <div className="relative w-full bg-black py-4 pl-12 pr-2">
-      <Button
-        className="absolute"
-        onClick={() => setOpen(true)}
-        disabled={!qrCode}
-        style={{ top: '1rem', right: '1rem' }}
+      <div
+        className="absolute flex"
+        style={{
+          top: '1rem',
+          right: '1rem',
+          gap: 4,
+          opacity: rawUrl && qrCode ? 1 : 0.5,
+        }}
       >
-        QRCODE
-      </Button>
+        <a href={rawUrl}>
+          <Button disabled={!rawUrl}>下載</Button>
+        </a>
+        <Button onClick={() => setOpen(true)} disabled={!qrCode}>
+          QRCODE
+        </Button>
+      </div>
       {open && (
         <Portal>
           <div
