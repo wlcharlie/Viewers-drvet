@@ -86,6 +86,8 @@ function ViewerLayout({
   // From Modes
   leftPanels,
   rightPanels,
+  leftPanelDefaultClosed,
+  rightPanelDefaultClosed,
   viewports,
   ViewportGridComp,
 }) {
@@ -145,6 +147,16 @@ function ViewerLayout({
         }),
     },
   ];
+
+  if (appConfig.oidc) {
+    menuOptions.push({
+      title: t('Header:Logout'),
+      icon: 'power-off',
+      onClick: async () => {
+        navigate(`/logout?redirect_uri=${encodeURIComponent(window.location.href)}`);
+      }
+    });
+  }
 
   /**
    * Set body classes (tailwindcss) that don't allow vertical
@@ -209,7 +221,9 @@ function ViewerLayout({
           <ErrorBoundary context="Left Panel">
             <SidePanel
               side="left"
-              defaultComponentOpen={leftPanelComponents[0].name}
+              defaultComponentOpen={
+                leftPanelDefaultClosed ? null : leftPanelComponents[0].name
+              }
               childComponents={leftPanelComponents}
             />
           </ErrorBoundary>
@@ -230,7 +244,9 @@ function ViewerLayout({
           <ErrorBoundary context="Right Panel">
             <SidePanel
               side="right"
-              defaultComponentOpen={rightPanelComponents[0].name}
+              defaultComponentOpen={
+                rightPanelDefaultClosed ? null : rightPanelComponents[0].name
+              }
               childComponents={rightPanelComponents}
             />
           </ErrorBoundary>
@@ -249,6 +265,8 @@ ViewerLayout.propTypes = {
   // From modes
   leftPanels: PropTypes.array,
   rightPanels: PropTypes.array,
+  leftPanelDefaultClosed: PropTypes.bool.isRequired,
+  rightPanelDefaultClosed: PropTypes.bool.isRequired,
   /** Responsible for rendering our grid of viewports; provided by consuming application */
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
 };
@@ -256,6 +274,8 @@ ViewerLayout.propTypes = {
 ViewerLayout.defaultProps = {
   leftPanels: [],
   rightPanels: [],
+  leftPanelDefaultClosed: false,
+  rightPanelDefaultClosed: false,
 };
 
 export default ViewerLayout;
