@@ -1,9 +1,13 @@
 {
-  "Criteria nonconformities": "不合标准",
-  "Delete": "删除",
+  "Criteria nonconformities": "不合標準",
+  "Measurements": "紀錄",
+  "No tracked measurements": "無追蹤紀錄",
+  "Create Report": "建立報告",
+  "Export": "匯出",
+  "Delete": "刪除",
   "Description": "描述",
   "MAX": "最大",
-  "NonTargets": "非靶向",
-  "Relabel": "重新标记",
-  "Targets": "靶向"
+  "NonTargets": "非標的",
+  "Relabel": "重新標記",
+  "Targets": "標的"
 }

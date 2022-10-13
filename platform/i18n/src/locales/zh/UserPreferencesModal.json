@@ -1,6 +1,14 @@
 {
   "Cancel": "取消",
-  "Reset to Defaults": "返回默认",
-  "Save": "保存",
-  "User Preferences": "用户偏好"
+  "No hotkeys found": "未找到此應用程式的快捷鍵，若要設定請聯繫系統人員",
+  "Reset to Defaults": "返回初始值",
+  "ResetDefaultMessage": "設定已重至為初始值 <br /> 完成設定後請務必<strong>儲存</strong>",
+  "Save": "儲存",
+  "SaveMessage": "設定已儲存",
+  "User Preferences": "設定",
+  "Function": "功能",
+  "Shortcut": "捷徑",
+  "Language": "語言",
+  "Hotkeys": "快捷鍵",
+  "General": "一般"
 }

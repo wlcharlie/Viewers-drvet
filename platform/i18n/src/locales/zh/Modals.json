@@ -1,0 +1,13 @@
+{
+  "Download High Quality Image": "下載高解析影像",
+  "Cancel": "取消",
+  "Download": "下載",
+  "File Name": "檔案名稱",
+  "Active viewport has no displayed image": "Active viewport has no displayed image",
+  "Image preview": "影像預覽",
+  "Show Annotations": "顯示註解",
+  "File Type": "檔案類型",
+  "Image height (px)": "像素高度 (px)",
+  "Image width (px)": "像素寬度 (px)",
+  "Please specify the dimensions, filename, and desired type for the output image.": "請設定影像輸出的 尺寸、檔案名稱、檔案類型"
+}

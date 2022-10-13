@@ -17,6 +17,10 @@ export default function getName(element, defaultValue) {
   if (!element.Value.length) {
     return defaultValue;
   }
+  //PoHuang Return the Ideographic component gruop
+  if (element.Value[0].Ideographic) {
+    return element.Value[0].Ideographic;
+  }
   // Return the Alphabetic component group
   if (element.Value[0].Alphabetic) {
     return element.Value[0].Alphabetic;

@@ -1,15 +1,16 @@
 {
-  "Image": "图像",
-  "Layout": "显示窗口",
-  "Measurements": "测量值",
+  "Close": "關閉",
+  "Image": "影像",
+  "Layout": "視窗格數",
+  "Measurements": "測量值",
   "More": "更多",
-  "Next": "下一个",
+  "Next": "下一頁",
   "Play": "播放",
-  "Previous": "上一个",
-  "Reset": "复原",
-  "RowsPerPage": "每页条数",
-  "Series": "序列",
-  "Show": "显示",
+  "Previous": "上一頁",
+  "Reset": "重置",
+  "RowsPerPage": "每頁行數",
+  "Series": "檢查",
+  "Show": "顯示",
   "Stop": "停止",
-  "StudyDate": "时间"
+  "StudyDate": "檢查日期"
 }

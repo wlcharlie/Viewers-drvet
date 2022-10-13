@@ -1,0 +1,14 @@
+{
+  "emptyFilenameError": "檔案名稱不能空白",
+  "fileType": "檔案類型",
+  "filename": "檔案名稱",
+  "formTitle": "請標明影像輸出時的 尺寸, 檔案名稱, 及檔案類型",
+  "imageHeight": "像素高度 (px)",
+  "imagePreview": "影像預覽",
+  "imageWidth": "像素寬度 (px)",
+  "keepAspectRatio": "維持影像比例",
+  "loadingPreview": "載入影像預覽中...",
+  "minHeightError": "最小允許像素高度 100px.",
+  "minWidthError": "最小允許像素寬度 100px.",
+  "showAnnotations": "顯示 註解"
+}
